@@ -1,0 +1,16 @@
+# Estado runtime (não versionar)
+.config/state.json
+*.log
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Editor files
+.DS_Store
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db

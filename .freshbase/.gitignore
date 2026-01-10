@@ -1,0 +1,10 @@
+# Runtime state (não versionar)
+state.json
+*.log
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# Editor files
+.DS_Store

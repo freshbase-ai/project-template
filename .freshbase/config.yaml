@@ -1,0 +1,64 @@
+version: "1.0"  # FSS v1.0
+
+# Metadata do projeto (versionado)
+project:
+  name: "{{PROJECT_NAME}}"
+  description: "Discovery and planning workspace managed by Singular"
+  language: "pt-BR"
+  stage: "In discovery"
+  structure: "fss-ddd"
+  created: "{{CREATED_DATE}}"
+
+# Paths FSS v1.0
+paths:
+  # Configuration (inside .freshbase/)
+  root: ".freshbase"
+  templates: ".freshbase/templates"
+  hooks: ".freshbase/hooks"
+  memory: ".freshbase/.memory"
+  # Documentation (root-level)
+  overview: "overview"
+  flows: "flows"
+  contexts: "contexts"
+  discovery: "discovery"
+  decisions: "decisions"
+  crossCutting: "cross-cutting"
+  features: "features"
+  specs: "specs"
+  meetings: "meetings"
+  uncategorized: "uncategorized"
+
+# Configuração de fila (database-first)
+queue:
+  strategy: "database"
+  table: "agent_jobs"
+  maxAttempts: 3
+  retryDelayMs: 5000
+
+# Configuração do agent
+agent:
+  model: "auto"
+  provider: "cursor"
+  autoCommit: false
+  commitMessageTemplate: "docs({{CONTEXT}}): {{CHANGE_DESCRIPTION}}"
+  ui:
+    progressDisplay: "detailed"
+
+# Skills
+skills:
+  generative:
+    enabled: true
+    defaultPrompt: "hooks/style-guide.md"
+
+# Hooks
+hooks:
+  onInit: "hooks/on-init.md"
+  preCommit: "hooks/pre-commit.md"
+  styleGuide: "hooks/style-guide.md"
+
+# Templates FSS
+templates:
+  context: "templates/context.md"
+  spec: "templates/spec.md"
+  plan: "templates/plan.md"
+  adr: "templates/adr.md"
