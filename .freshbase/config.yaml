@@ -1,64 +1,194 @@
-version: "1.0"  # FSS v1.0
+version: "2.0"
 
-# Metadata do projeto (versionado)
-project:
-  name: "{{PROJECT_NAME}}"
-  description: "Discovery and planning workspace managed by Singular"
-  language: "pt-BR"
-  stage: "In discovery"
-  structure: "fss-ddd"
-  created: "{{CREATED_DATE}}"
+# =============================================================================
+# System Configuration (v2.0 - Type-Based)
+# =============================================================================
+system:
+  mode: "strict_types"        # Não permite commit de .md sem 'type'
+  allow_root_files: true      # Permite arquivos na raiz (uncategorized)
+  hidden_from_user: true      # .freshbase oculto para usuário, visível para agentes
+  on_missing_type: "auto_fix" # auto_fix | block
 
-# Paths FSS v1.0
+  heuristic:
+    auto_apply_threshold: 0.7    # Confidence mínima para auto-aplicar
+    suggestion_only_threshold: 0.3
+    weights:
+      path_match: 0.4
+      content_match: 0.3
+      filename_pattern: 0.2
+      proximity_to_similar: 0.1
+
+# =============================================================================
+# Vaults (Read-Only Parallel Repositories)
+# =============================================================================
+# Vaults são repositórios paralelos read-only para referenciar specs de produto base.
+# Descomente e configure se seu projeto herda especificações de um produto core.
+vaults: []
+  # - name: "core"
+  #   source: "git@github.com:org/product-core-specs.git"
+  #   mount_point: ".freshbase/vaults/core"
+  #   access: "readonly"
+
+# =============================================================================
+# Type Definitions
+# =============================================================================
+# Princípio: O que define um arquivo é seu metadado, não onde ele está salvo.
+types:
+  spec:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "spec"
+      filename_suffix: ".spec.md"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "context"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["draft", "in_review", "approved", "implemented"]
+      - field: "version"
+        validation: "placeholder_ok"
+    default_path: "specs/"
+    colocation_strategy:
+      - rule: "near_context"
+      - rule: "near_parent"
+
+  adr:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "adr"
+      filename_match: "ADR-*"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["proposed", "accepted", "deprecated", "superseded"]
+      - field: "deciders"
+        validation: "non_empty"
+    default_path: "decisions/"
+
+  meeting:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "meeting"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "date"
+        validation: "non_empty"
+    default_path: "meetings/"
+
+  context:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "context"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "responsibility"
+        validation: "non_empty"
+    default_path: "contexts/"
+
+  problem:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "problem"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["draft", "validated", "invalidated"]
+    default_path: "discovery/problems/"
+
+  hypothesis:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "hypothesis"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["draft", "testing", "validated", "invalidated"]
+      - field: "problem"
+        validation: "non_empty"
+    default_path: "discovery/hypotheses/"
+
+  flow:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "flow"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["draft", "active", "deprecated"]
+    default_path: "flows/"
+
+  plan:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "plan"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "spec"
+        validation: "non_empty"
+      - field: "status"
+        validation: "enum"
+        enum: ["planning", "in_progress", "blocked", "completed"]
+    default_path: "contexts/"
+
+  scenarios:
+    detection:
+      frontmatter:
+        field: "type"
+        equals: "scenarios"
+    required_fields:
+      - field: "title"
+        validation: "non_empty"
+      - field: "feature"
+        validation: "non_empty"
+    default_path: "features/"
+
+# =============================================================================
+# Paths
+# =============================================================================
 paths:
-  # Configuration (inside .freshbase/)
   root: ".freshbase"
   templates: ".freshbase/templates"
   hooks: ".freshbase/hooks"
-  memory: ".freshbase/.memory"
-  # Documentation (root-level)
-  overview: "overview"
-  flows: "flows"
-  contexts: "contexts"
-  discovery: "discovery"
-  decisions: "decisions"
-  crossCutting: "cross-cutting"
-  features: "features"
-  specs: "specs"
-  meetings: "meetings"
-  uncategorized: "uncategorized"
+  vaults: ".freshbase/vaults"
 
-# Configuração de fila (database-first)
-queue:
-  strategy: "database"
-  table: "agent_jobs"
-  maxAttempts: 3
-  retryDelayMs: 5000
+# =============================================================================
+# Legacy Compatibility (v1.0 fields, ignored in v2.0)
+# =============================================================================
+# These fields are kept for backward compatibility but are not used in v2.0.
+# The type-based system replaces folder-based organization.
 
-# Configuração do agent
-agent:
-  model: "auto"
-  provider: "cursor"
-  autoCommit: false
-  commitMessageTemplate: "docs({{CONTEXT}}): {{CHANGE_DESCRIPTION}}"
-  ui:
-    progressDisplay: "detailed"
+# project:
+#   name: "{{PROJECT_NAME}}"
+#   description: "Discovery and planning workspace"
+#   language: "pt-BR"
 
-# Skills
-skills:
-  generative:
-    enabled: true
-    defaultPrompt: "hooks/style-guide.md"
+# agent:
+#   model: "auto"
+#   provider: "cursor"
+#   autoCommit: false
 
-# Hooks
-hooks:
-  onInit: "hooks/on-init.md"
-  preCommit: "hooks/pre-commit.md"
-  styleGuide: "hooks/style-guide.md"
-
-# Templates FSS
-templates:
-  context: "templates/context.md"
-  spec: "templates/spec.md"
-  plan: "templates/plan.md"
-  adr: "templates/adr.md"
+# hooks:
+#   onInit: "hooks/on-init.md"
+#   preCommit: "hooks/pre-commit.md"
+#   styleGuide: "hooks/style-guide.md"
