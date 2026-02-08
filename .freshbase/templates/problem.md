@@ -1,41 +1,83 @@
-# Problem: {TITLE}
+---
+type: problem
+title: "{{TITLE}}"
+status: draft
+owner: "{{OWNER}}"
+source: meeting
+---
 
-## Metadata
-- **ID:** PRB-{NUMBER}
-- **Status:** draft | validated | invalidated
-- **Owner:** {stakeholder}
-- **Created:** {date}
-- **Source:** meeting | interview | analytics | support-ticket
+<!--
+================================================================================
+GUIA: Problema de Negocio (Problem)
+================================================================================
+
+QUANDO USAR
+Use este tipo para documentar problemas de negocio identificados.
+Crie um problem quando:
+- Identificar uma dor do usuario ou gap no produto
+- Receber feedback consistente de stakeholders/usuarios
+- Detectar metricas negativas ou tendencias preocupantes
+
+CAMPOS OBRIGATORIOS
+- title: Nome descritivo (ex: "Usuarios abandonam checkout")
+- status: draft | validated | invalidated
+
+CAMPOS OPCIONAIS
+- owner: Stakeholder responsavel
+- source: meeting | interview | analytics | support-ticket
+
+RELACIONAMENTOS
+- Nasce de: meetings, entrevistas, analise de dados
+- Gera: hypotheses (para validar solucoes)
+- Eventualmente leva a: specs (se hipotese validada)
+
+DICAS
+- Descreva o problema do ponto de vista do usuario
+- Inclua evidencias qualitativas E quantitativas
+- Nao proponha solucoes aqui - isso e para hypotheses
+
+Apague este bloco de comentario ao usar o template.
+================================================================================
+-->
+
+# {{TITLE}}
 
 ## Problem Statement
 
 ### Who is affected?
-{Persona ou grupo de usuários afetados}
+
+{Persona ou grupo de usuarios afetados}
 
 ### What is the problem?
-{Descrição clara do problema observado}
+
+{Descricao clara do problema observado}
 
 ### Where/When does it occur?
+
 {Contexto em que o problema se manifesta}
 
 ### Why does it matter?
-{Impacto no negócio/usuário}
+
+{Impacto no negocio/usuario}
 
 ## Evidence
 
 ### Qualitative
-- {Citação de reunião/entrevista}
-- {Feedback de usuário}
+
+- {Citacao de reuniao/entrevista}
+- {Feedback de usuario}
 
 ### Quantitative
-- {Métrica atual}: {valor}
-- {Métrica de suporte}: {valor}
+
+- {Metrica atual}: {valor}
+- {Metrica de suporte}: {valor}
 
 ## Context & Relationships
-- **Impacted Contexts:** [[contexts/{context-name}]]
-- **Meetings:** [[discovery/meetings/{date}-{title}]]
-- **Hypotheses:** [[discovery/hypotheses/HYP-{id}]]
-- **Specs:** [[contexts/{context}/specs/{feature-id}]]
+
+- **Impacted Contexts:** [[contexts/{{CONTEXT}}]]
+- **Meetings:** [[meetings/{{DATE}}-{{TITLE}}]]
+- **Hypotheses:** [[discovery/hypotheses/HYP-XXX]]
 
 ## Notes
-{Observações adicionais}
+
+{Observacoes adicionais}

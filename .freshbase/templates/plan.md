@@ -1,13 +1,52 @@
-# Implementation Plan: {{FEATURE_NAME}}
+---
+type: plan
+title: "{{TITLE}}"
+spec: "{{SPEC_REFERENCE}}"
+status: planning
+owner: "{{OWNER}}"
+effort: M
+---
 
-**Spec:** [[contexts/{context}/specs/{feature-id}/spec.md]]
-**Status:** Planning | In Progress | Blocked | Completed
-**Owner:** _Assignee name_
+<!--
+================================================================================
+GUIA: Plano de Implementacao (Plan)
+================================================================================
 
-## Context
+QUANDO USAR
+Use este tipo para planejar a implementacao de uma spec.
+Crie um plan quando:
+- Uma spec foi aprovada e esta pronta para implementacao
+- Precisar quebrar o trabalho em tarefas menores
+- Quiser rastrear progresso e dependencias
 
-**Bounded Context:** `contexts/{{CONTEXT_NAME}}`
-**Estimated Effort:** _S / M / L / XL_
+CAMPOS OBRIGATORIOS
+- title: Nome descritivo (ex: "Implementacao: One-click Checkout")
+- spec: Referencia a spec sendo implementada
+- status: planning | in_progress | blocked | completed
+
+CAMPOS OPCIONAIS
+- owner: Responsavel pela implementacao
+- effort: S | M | L | XL (estimativa de esforco)
+
+RELACIONAMENTOS
+- Nasce de: spec aprovada
+- Quebra em: tasks/fases de implementacao
+- Referencia: ADRs de decisoes tecnicas
+
+DICAS
+- Divida em fases logicas (Foundation, Core, Integration)
+- Inclua pre-requisitos e dependencias
+- Mantenha um log de progresso
+- Defina criterios claros de "done"
+
+Apague este bloco de comentario ao usar o template.
+================================================================================
+-->
+
+# {{TITLE}}
+
+**Spec:** [[specs/{{SPEC}}]]
+**Bounded Context:** [[contexts/{{CONTEXT}}]]
 
 ## Prerequisites
 
@@ -55,7 +94,4 @@ _Any architectural decisions, patterns, or considerations._
 
 | Date | Update |
 |------|--------|
-| {{CREATED_DATE}} | Plan created |
-
----
-*Created: {{CREATED_DATE}}*
+| {{DATE}} | Plan created |

@@ -1,8 +1,43 @@
-# Scenarios: {FEATURE-TITLE}
+---
+type: scenarios
+title: "{{TITLE}}"
+feature: "{{FEATURE_REFERENCE}}"
+---
 
-## Metadata
-- **Feature:** [[contexts/{context}/specs/{feature-id}/spec.md]]
-- **Updated:** {date}
+<!--
+================================================================================
+GUIA: Cenarios BDD (Scenarios)
+================================================================================
+
+QUANDO USAR
+Use este tipo para documentar cenarios de teste em formato BDD.
+Crie scenarios quando:
+- Uma spec precisa de criterios de aceitacao detalhados
+- Quiser definir comportamento esperado de forma executavel
+- Precisar alinhar QA, dev e produto sobre o que "pronto" significa
+
+CAMPOS OBRIGATORIOS
+- title: Nome descritivo (ex: "Login com email e senha")
+- feature: Referencia a spec/feature sendo testada
+
+RELACIONAMENTOS
+- Nasce de: spec (criterios de aceitacao)
+- Valida: comportamento da implementacao
+- Pode virar: testes automatizados
+
+DICAS
+- Use formato Given/When/Then consistentemente
+- Agrupe cenarios relacionados
+- Inclua edge cases e cenarios de erro
+- Use Examples para data-driven scenarios
+
+Apague este bloco de comentario ao usar o template.
+================================================================================
+-->
+
+# {{TITLE}}
+
+**Feature:** [[specs/{{FEATURE}}]]
 
 ---
 
@@ -15,6 +50,7 @@
 **Then** {expected outcome}
 
 **Examples:**
+
 | {variable1} | {variable2} | {expected} |
 |-------------|-------------|------------|
 | {value}     | {value}     | {value}    |

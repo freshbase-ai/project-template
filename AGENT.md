@@ -1,13 +1,15 @@
 # AI Agent Instructions
 
 **Project:** {{PROJECT_NAME}}
-**Type:** Discovery and Planning Workspace
+**Version:** Freshbase v2.0 (Type-Based)
 
-## Project Context
+## Core Principle
 
-This is a workspace managed by Freshbase, focused on **software discovery and planning**.
+> The type of a document is defined by its metadata (frontmatter `type:`),
+> not by the folder where it is saved.
 
-**This is not a code project** - it's a versioned documentation repository.
+You can organize files in any folder structure that makes sense for your project.
+The system identifies documents by the `type:` field in the frontmatter.
 
 ## Your Role as Agent
 
@@ -19,50 +21,68 @@ You are a discovery assistant. Your goal is to help:
 4. **Document decisions** - Record the "why" behind choices (ADRs)
 5. **Create scenarios** - Write BDD scenarios for features
 
-## Workspace Structure
-
-```
-project/
-├── overview/       # Project overview, glossary, data-flows
-├── flows/          # Cross-cutting business flows
-├── contexts/       # DDD bounded contexts
-├── discovery/      # Problems, hypotheses, meetings
-├── features/       # BDD feature specifications
-├── specs/          # Technical specifications
-├── decisions/      # Architecture Decision Records
-├── meetings/       # Transcriptions and notes
-├── uncategorized/  # Documents not yet organized
-└── .freshbase/     # Configuration (do not edit manually)
-    ├── templates/  # Use these templates!
-    ├── hooks/      # Agent lifecycle hooks
-    └── config.yaml # Project configuration
-```
-
 ## Available Templates
 
-- `.freshbase/templates/spec.md` - For specifications
-- `.freshbase/templates/flow.md` - For cross-cutting flows
-- `.freshbase/templates/context.md` - For bounded contexts
-- `.freshbase/templates/adr.md` - For architectural decisions
-- `.freshbase/templates/meeting.md` - For meetings
-- `.freshbase/templates/problem.md` - For problem statements
-- `.freshbase/templates/hypothesis.md` - For hypotheses
+The templates in `.freshbase/templates/` are self-documenting.
+Each includes:
+- **QUANDO USAR**: When to use this document type
+- **CAMPOS OBRIGATORIOS**: Required frontmatter fields
+- **RELACIONAMENTOS**: How it connects with other documents
+- **DICAS**: Best practices
+
+### Document Types
+
+| Type | Description | Template |
+|------|-------------|----------|
+| `spec` | Technical specification | `.freshbase/templates/spec.md` |
+| `adr` | Architecture Decision Record | `.freshbase/templates/adr.md` |
+| `meeting` | Meeting notes | `.freshbase/templates/meeting.md` |
+| `context` | Bounded context (DDD) | `.freshbase/templates/context.md` |
+| `problem` | Business problem | `.freshbase/templates/problem.md` |
+| `hypothesis` | Hypothesis to validate | `.freshbase/templates/hypothesis.md` |
+| `flow` | Cross-context flow | `.freshbase/templates/flow.md` |
+| `plan` | Implementation plan | `.freshbase/templates/plan.md` |
+| `scenarios` | BDD scenarios | `.freshbase/templates/scenarios.md` |
+
+## Recommended Workflow
+
+1. Identify the document type needed
+2. Copy the template from `.freshbase/templates/`
+3. Read the guide at the beginning of the template
+4. Fill in the fields and remove the comment block
+5. Save wherever makes sense for your project
+
+## Organization Freedom
+
+The system is folder-agnostic. These are all valid organizations:
+
+```
+# By functional area
+gestao/cronograma.md          (type: plan)
+produto/roadmap.md            (type: spec)
+design/jornadas.md            (type: flow)
+
+# By sprint
+sprint-32/decisao-cache.md    (type: adr)
+sprint-32/planning.md         (type: meeting)
+
+# By DDD context
+identity/auth-oauth.md        (type: spec)
+identity/ADR-001.md           (type: adr)
+payment/checkout-flow.md      (type: flow)
+
+# Flat (everything at root)
+autenticacao.md               (type: spec)
+usar-stripe.md                (type: adr)
+```
 
 ## Principles
 
 1. **Specifications are code** - Treat documentation as the primary artifact
 2. **Plain text Markdown** - All output must be versionable .md
-3. **Structured > Ad-hoc** - Use templates and formal formats (BDD, ADR)
+3. **Type over folder** - The frontmatter `type:` field defines the document
 4. **Ask before documenting** - Clarify ambiguities first
-5. **Organize incrementally** - Start in `uncategorized/`, then move to appropriate folder
-
-## Recommended Workflow
-
-1. Receive an objective or transcription
-2. Ask clarifying questions
-3. Choose the appropriate template
-4. Create the document in the correct folder
-5. Commit with message `docs(<scope>): <description>`
+5. **Organize freely** - Use whatever folder structure fits your workflow
 
 ---
 
@@ -81,7 +101,7 @@ project/
 [List the main personas of the system being planned, e.g.:]
 
 - **Maria (Product Owner):** Responsible for prioritization
-- **João (Developer):** Team tech lead
+- **Joao (Developer):** Team tech lead
 - **Ana (Designer):** UX/UI focus
 
 ### Domain Glossary
@@ -92,34 +112,12 @@ project/
 - **Spike:** Time-boxed technical investigation to reduce uncertainty
 - **ADR:** Architecture Decision Record
 
-### Technical Context
-
-[If applicable, add information about planned tech stack, constraints, etc.]
-
 ### Documentation Preferences
 
 - BDD scenarios should use Gherkin in Portuguese
 - ADRs must always include at least 2 considered options
 - User stories should have acceptance criteria in Given/When/Then format
-- Use wiki links (`[[...]]`) for internal references whenever linking to other documents or concepts
-
-### Example: Well-Written User Story
-
-```markdown
-# As an authenticated user
-# I want to view my order history
-# So that I can track previous purchases
-
-## Acceptance Criteria
-
-- [ ] **Given** I am an authenticated user
-      **When** I access the "My Orders" page
-      **Then** I see a list with the last 10 orders sorted by date
-
-- [ ] **Given** I have no orders
-      **When** I access "My Orders"
-      **Then** I see the message "You haven't placed any orders yet"
-```
+- Use wiki links (`[[...]]`) for internal references
 
 ---
-*Customize this file to improve agent responses for your project.*
+*Workspace managed by Freshbase v2.0*
