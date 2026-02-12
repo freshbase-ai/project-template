@@ -4,9 +4,9 @@ version: "2.0"
 # System Configuration (v2.0 - Type-Based)
 # =============================================================================
 system:
-  mode: "strict_types"        # Não permite commit de .md sem 'type'
-  allow_root_files: true      # Permite arquivos na raiz (uncategorized)
-  hidden_from_user: true      # .freshbase oculto para usuário, visível para agentes
+  mode: "strict_types"        # Disallows commit of .md without 'type'
+  allow_root_files: true      # Allows files at root (uncategorized)
+  hidden_from_user: true      # .freshbase hidden from user, visible to agents
   on_missing_type: "auto_fix" # auto_fix | block
 
   heuristic:
@@ -21,8 +21,8 @@ system:
 # =============================================================================
 # Vaults (Read-Only Parallel Repositories)
 # =============================================================================
-# Vaults são repositórios paralelos read-only para referenciar specs de produto base.
-# Descomente e configure se seu projeto herda especificações de um produto core.
+# Vaults are read-only parallel repositories for referencing base product specs.
+# Uncomment and configure if your project inherits specifications from a core product.
 vaults: []
   # - name: "core"
   #   source: "git@github.com:org/product-core-specs.git"
@@ -32,7 +32,7 @@ vaults: []
 # =============================================================================
 # Type Definitions
 # =============================================================================
-# Princípio: O que define um arquivo é seu metadado, não onde ele está salvo.
+# Principle: What defines a file is its metadata, not where it is saved.
 types:
   spec:
     detection:

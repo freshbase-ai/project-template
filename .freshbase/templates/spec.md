@@ -8,34 +8,34 @@ version: "0.1"
 
 <!--
 ================================================================================
-GUIA: Especificacao Tecnica (Spec)
+GUIDE: Technical Specification (Spec)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar requisitos tecnicos de uma funcionalidade.
-Crie uma spec quando:
-- Voce tem uma funcionalidade validada (problema + hipotese confirmados)
-- Precisa detalhar o "o que" antes do "como"
-- Quer alinhar expectativas entre produto e engenharia
+WHEN TO USE
+Use this type to document technical requirements for a feature.
+Create a spec when:
+- You have a validated feature (problem + hypothesis confirmed)
+- You need to detail the "what" before the "how"
+- You want to align expectations between product and engineering
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Autenticacao com OAuth 2.0")
-- context: Bounded context relacionado (ex: "identity")
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "OAuth 2.0 Authentication")
+- context: Related bounded context (e.g., "identity")
 - status: draft | in_review | approved | implemented
-- version: Versionamento semantico (0.1, 1.0, etc.)
+- version: Semantic versioning (0.1, 1.0, etc.)
 
-RELACIONAMENTOS
-- Nasce de: problem.md ou hypothesis.md
-- Gera: plan.md (implementacao) e scenarios.md (testes BDD)
-- Referencia: context.md (bounded context) e adr.md (decisoes tecnicas)
+RELATIONSHIPS
+- Born from: problem.md or hypothesis.md
+- Generates: plan.md (implementation) and scenarios.md (BDD tests)
+- References: context.md (bounded context) and adr.md (technical decisions)
 
-DICAS
-- Foque no "o que", nao no "como" (isso vai no plan.md)
-- Inclua criterios de aceitacao mensuraveis
-- Link para documentos relacionados com [[wiki-style]]
-- Reference problemas de discovery/problems/
+TIPS
+- Focus on the "what", not the "how" (that goes in plan.md)
+- Include measurable acceptance criteria
+- Link to related documents with [[wiki-style]]
+- Reference problems from discovery/problems/
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

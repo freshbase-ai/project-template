@@ -6,32 +6,32 @@ feature: "{{FEATURE_REFERENCE}}"
 
 <!--
 ================================================================================
-GUIA: Cenarios BDD (Scenarios)
+GUIDE: BDD Scenarios (Scenarios)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar cenarios de teste em formato BDD.
-Crie scenarios quando:
-- Uma spec precisa de criterios de aceitacao detalhados
-- Quiser definir comportamento esperado de forma executavel
-- Precisar alinhar QA, dev e produto sobre o que "pronto" significa
+WHEN TO USE
+Use this type to document test scenarios in BDD format.
+Create scenarios when:
+- A spec needs detailed acceptance criteria
+- You want to define expected behavior in an executable way
+- You need to align QA, dev, and product on what "done" means
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Login com email e senha")
-- feature: Referencia a spec/feature sendo testada
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "Login with email and password")
+- feature: Reference to the spec/feature being tested
 
-RELACIONAMENTOS
-- Nasce de: spec (criterios de aceitacao)
-- Valida: comportamento da implementacao
-- Pode virar: testes automatizados
+RELATIONSHIPS
+- Born from: spec (acceptance criteria)
+- Validates: implementation behavior
+- Can become: automated tests
 
-DICAS
-- Use formato Given/When/Then consistentemente
-- Agrupe cenarios relacionados
-- Inclua edge cases e cenarios de erro
-- Use Examples para data-driven scenarios
+TIPS
+- Use Given/When/Then format consistently
+- Group related scenarios
+- Include edge cases and error scenarios
+- Use Examples for data-driven scenarios
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

@@ -4,31 +4,31 @@ title: "{{TITLE}}"
 
 <!--
 ================================================================================
-GUIA: Context Map (Mapa de Contextos)
+GUIDE: Context Map
 ================================================================================
 
-QUANDO USAR
-Use este template para mapear features que cruzam multiplos bounded contexts.
-Crie um context-map quando:
-- Uma feature envolve 2+ bounded contexts
-- Precisa documentar integracoes entre contextos
-- Quer visualizar o fluxo de dados entre dominios
+WHEN TO USE
+Use this template to map features that cross multiple bounded contexts.
+Create a context-map when:
+- A feature involves 2+ bounded contexts
+- You need to document integrations between contexts
+- You want to visualize data flow between domains
 
-CAMPOS SUGERIDOS
-- title: Nome descritivo (ex: "Feature Cross-Context: User Onboarding")
+SUGGESTED FIELDS
+- title: Descriptive name (e.g., "Cross-Context Feature: User Onboarding")
 
-RELACIONAMENTOS
-- Referencia: contexts envolvidos
-- Complementa: flow.md (sequencia de passos)
-- Documenta: decisoes de integracao (ADRs)
+RELATIONSHIPS
+- References: involved contexts
+- Complements: flow.md (step sequence)
+- Documents: integration decisions (ADRs)
 
-DICAS
-- Identifique o contexto "owner" da feature
-- Documente contratos de integracao (APIs, eventos)
-- Especifique modelo de consistencia (strong vs eventual)
-- Liste riscos de integracao e mitigacoes
+TIPS
+- Identify the "owner" context of the feature
+- Document integration contracts (APIs, events)
+- Specify consistency model (strong vs eventual)
+- List integration risks and mitigations
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 
@@ -36,7 +36,7 @@ Apague este bloco de comentario ao usar o template.
 
 ## Overview
 
-{Descricao da feature que cruza multiplos contextos}
+{Description of the feature that crosses multiple contexts}
 
 ## Affected Contexts
 
@@ -44,7 +44,7 @@ Apague este bloco de comentario ao usar o template.
 
 - **Context:** [[contexts/{{PRIMARY_CONTEXT}}]]
 - **Role:** Owner / Coordinator
-- **Responsibilities:** {o que este contexto gerencia}
+- **Responsibilities:** {what this context manages}
 
 ### Secondary Contexts
 
@@ -52,15 +52,15 @@ Apague este bloco de comentario ao usar o template.
 
 - **Context:** [[contexts/{{CONTEXT_1}}]]
 - **Role:** Supplier / Consumer
-- **Integration:** {tipo de integracao - API, Events, Shared Kernel}
-- **Contract:** {descricao do contrato}
+- **Integration:** {integration type - API, Events, Shared Kernel}
+- **Contract:** {contract description}
 
 #### {{CONTEXT_NAME_2}}
 
 - **Context:** [[contexts/{{CONTEXT_2}}]]
 - **Role:** Supplier / Consumer
-- **Integration:** {tipo de integracao}
-- **Contract:** {descricao do contrato}
+- **Integration:** {integration type}
+- **Contract:** {contract description}
 
 ## Integration Patterns
 
@@ -72,19 +72,19 @@ Apague este bloco de comentario ao usar o template.
 
 ### Shared Types
 
-- `{TypeName}`: usado por {Context A, Context B}
-- `{TypeName}`: usado por {Context B, Context C}
+- `{TypeName}`: used by {Context A, Context B}
+- `{TypeName}`: used by {Context B, Context C}
 
 ## Coordination
 
 ### Orchestration vs Choreography
 
-{Descrever se ha um orquestrador central ou se e coreografia baseada em eventos}
+{Describe whether there is a central orchestrator or event-based choreography}
 
 ### Consistency Model
 
-- **Strong Consistency:** {quais operacoes}
-- **Eventual Consistency:** {quais operacoes}
+- **Strong Consistency:** {which operations}
+- **Eventual Consistency:** {which operations}
 
 ## Risks & Considerations
 

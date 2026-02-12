@@ -7,36 +7,36 @@ owner: "{{OWNER}}"
 
 <!--
 ================================================================================
-GUIA: Fluxo Cross-Context (Flow)
+GUIDE: Cross-Context Flow (Flow)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar fluxos que atravessam multiplos contextos.
-Crie um flow quando:
-- O processo envolve 2+ modulos/contexts
-- Ha orquestracao entre sistemas
-- O fluxo tem estados e transicoes definidos
-- Existem pontos de falha que precisam de tratamento
+WHEN TO USE
+Use this type to document flows that span multiple contexts.
+Create a flow when:
+- The process involves 2+ modules/contexts
+- There is orchestration between systems
+- The flow has defined states and transitions
+- There are failure points that need handling
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "User Onboarding Flow")
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "User Onboarding Flow")
 - status: draft | active | deprecated
 
-CAMPOS OPCIONAIS
-- owner: Responsavel pelo fluxo
+OPTIONAL FIELDS
+- owner: Flow owner
 
-RELACIONAMENTOS
-- Atravessa: multiplos contexts
-- Referencia: specs das funcionalidades envolvidas
-- Documenta: decisoes (ADRs) sobre o fluxo
+RELATIONSHIPS
+- Crosses: multiple contexts
+- References: specs of involved features
+- Documents: decisions (ADRs) about the flow
 
-DICAS
-- Use Mermaid para diagramas de sequencia
-- Documente o happy path E cenarios alternativos
-- Inclua pontos de falha e acoes de recuperacao
-- Liste regras de negocio que governam o fluxo
+TIPS
+- Use Mermaid for sequence diagrams
+- Document the happy path AND alternative scenarios
+- Include failure points and recovery actions
+- List business rules that govern the flow
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

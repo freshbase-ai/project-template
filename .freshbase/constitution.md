@@ -1,31 +1,31 @@
 # Project Constitution
 
-> Este documento define os princípios, padrões e fluxos de trabalho que regem este projeto.
+> This document defines the principles, standards and workflows that govern this project.
 
-## 1. Princípios Fundamentais (Freshbase Spec Standard)
+## 1. Fundamental Principles (Freshbase Spec Standard)
 
-1.  **Contexto antes do Código:** Nenhuma linha de código é escrita sem um entendimento claro do problema de negócio (Discovery) e da solução funcional (Spec).
-2.  **Single Source of Truth:** A documentação na pasta `.freshbase` (ou `contexts/`) é a verdade absoluta. Se o código contradiz a doc, o código está errado (ou a doc precisa ser atualizada).
-3.  **Rastreabilidade:** Toda Task técnica deve ser rastreável até uma Spec, que deve ser rastreável até um Problema ou Hipótese de negócio.
-4.  **Language Ubiquity:** Usamos a mesma terminologia (Domain Language) no código, na documentação e nas conversas.
+1.  **Context before Code:** No line of code is written without a clear understanding of the business problem (Discovery) and the functional solution (Spec).
+2.  **Single Source of Truth:** The documentation in the `.freshbase` folder (or `contexts/`) is the absolute truth. If the code contradicts the doc, the code is wrong (or the doc needs to be updated).
+3.  **Traceability:** Every technical Task must be traceable to a Spec, which must be traceable to a business Problem or Hypothesis.
+4.  **Language Ubiquity:** We use the same terminology (Domain Language) in code, documentation, and conversations.
 
-## 2. Estrutura de Camadas
+## 2. Layer Structure
 
-* **Discovery (Why):** Focada em problemas de negócio, métricas e hipóteses.
-* **Product (What):** Focada em requisitos funcionais, user stories e comportamento (BDD).
-* **Technical (How):** Focada em implementação, modelos de dados e tarefas.
+* **Discovery (Why):** Focused on business problems, metrics, and hypotheses.
+* **Product (What):** Focused on functional requirements, user stories, and behavior (BDD).
+* **Technical (How):** Focused on implementation, data models, and tasks.
 
-## 3. Workflow de Desenvolvimento
+## 3. Development Workflow
 
-1.  **Ingestão:** Reuniões e insights são processados em `discovery/`.
-2.  **Definição:** Problemas validados viram Specs dentro de seus respectivos `contexts/`.
-3.  **Planejamento:** Tech Leads quebram Specs em Plans e Tasks.
-4.  **Implementação:** Devs executam Tasks.
+1.  **Ingestion:** Meetings and insights are processed in `discovery/`.
+2.  **Definition:** Validated problems become Specs within their respective `contexts/`.
+3.  **Planning:** Tech Leads break down Specs into Plans and Tasks.
+4.  **Implementation:** Devs execute Tasks.
 
-## 4. Definição de Pronto (DoD)
+## 4. Definition of Done (DoD)
 
-Para uma feature ser considerada completa:
-- [ ] Spec aprovada pelo Product Owner.
-- [ ] Código implementado conforme Plan.
-- [ ] Testes (unitários/integração) passando conforme Scenarios.
-- [ ] Documentação atualizada.
+For a feature to be considered complete:
+- [ ] Spec approved by the Product Owner.
+- [ ] Code implemented according to Plan.
+- [ ] Tests (unit/integration) passing according to Scenarios.
+- [ ] Documentation updated.

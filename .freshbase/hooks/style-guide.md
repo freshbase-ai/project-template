@@ -2,7 +2,7 @@
 
 ## Language
 
-- Use **Portuguese (pt-BR)** for all documentation
+- Use the **workspace language** for all documentation (as defined in AGENT.md)
 - Maintain terminological consistency (define glossary per context)
 - Domain terms must be defined in each context's `context.md`
 

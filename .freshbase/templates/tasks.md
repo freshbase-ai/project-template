@@ -5,32 +5,32 @@ plan: "{{PLAN_REFERENCE}}"
 
 <!--
 ================================================================================
-GUIA: Lista de Tarefas (Tasks)
+GUIDE: Task List (Tasks)
 ================================================================================
 
-QUANDO USAR
-Use este template para detalhar tarefas de um plano de implementacao.
-Crie um tasks quando:
-- Um plan.md precisa de breakdown mais granular
-- Quer rastrear progresso de tarefas individuais
-- Precisa paralelizar trabalho entre membros da equipe
+WHEN TO USE
+Use this template to detail tasks from an implementation plan.
+Create a tasks when:
+- A plan.md needs more granular breakdown
+- You want to track individual task progress
+- You need to parallelize work among team members
 
-CAMPOS SUGERIDOS
-- title: Nome descritivo (ex: "Tasks: One-click Checkout")
-- plan: Referencia ao plano pai
+SUGGESTED FIELDS
+- title: Descriptive name (e.g., "Tasks: One-click Checkout")
+- plan: Reference to the parent plan
 
-RELACIONAMENTOS
-- Nasce de: plan.md (plano de implementacao)
-- Detalha: fases e tarefas do plano
-- Rastreia: progresso individual
+RELATIONSHIPS
+- Born from: plan.md (implementation plan)
+- Details: plan phases and tasks
+- Tracks: individual progress
 
-DICAS
-- Marque tarefas paralelas com [P]
-- Inclua checkpoints ao final de cada fase
-- Mantenha estimativas de esforco
-- Atualize status conforme progresso
+TIPS
+- Mark parallel tasks with [P]
+- Include checkpoints at the end of each phase
+- Maintain effort estimates
+- Update status as progress is made
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

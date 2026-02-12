@@ -9,37 +9,37 @@ effort: M
 
 <!--
 ================================================================================
-GUIA: Plano de Implementacao (Plan)
+GUIDE: Implementation Plan (Plan)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para planejar a implementacao de uma spec.
-Crie um plan quando:
-- Uma spec foi aprovada e esta pronta para implementacao
-- Precisar quebrar o trabalho em tarefas menores
-- Quiser rastrear progresso e dependencias
+WHEN TO USE
+Use this type to plan the implementation of a spec.
+Create a plan when:
+- A spec has been approved and is ready for implementation
+- You need to break work into smaller tasks
+- You want to track progress and dependencies
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Implementacao: One-click Checkout")
-- spec: Referencia a spec sendo implementada
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "Implementation: One-click Checkout")
+- spec: Reference to the spec being implemented
 - status: planning | in_progress | blocked | completed
 
-CAMPOS OPCIONAIS
-- owner: Responsavel pela implementacao
-- effort: S | M | L | XL (estimativa de esforco)
+OPTIONAL FIELDS
+- owner: Responsible for implementation
+- effort: S | M | L | XL (effort estimate)
 
-RELACIONAMENTOS
-- Nasce de: spec aprovada
-- Quebra em: tasks/fases de implementacao
-- Referencia: ADRs de decisoes tecnicas
+RELATIONSHIPS
+- Born from: approved spec
+- Breaks into: tasks/implementation phases
+- References: ADRs for technical decisions
 
-DICAS
-- Divida em fases logicas (Foundation, Core, Integration)
-- Inclua pre-requisitos e dependencias
-- Mantenha um log de progresso
-- Defina criterios claros de "done"
+TIPS
+- Divide into logical phases (Foundation, Core, Integration)
+- Include prerequisites and dependencies
+- Maintain a progress log
+- Define clear "done" criteria
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

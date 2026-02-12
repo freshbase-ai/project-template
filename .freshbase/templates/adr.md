@@ -8,34 +8,34 @@ date: "{{DATE}}"
 
 <!--
 ================================================================================
-GUIA: Architecture Decision Record (ADR)
+GUIDE: Architecture Decision Record (ADR)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para registrar decisoes arquiteturais importantes.
-Crie um ADR quando:
-- Tomar uma decisao tecnica significativa
-- Escolher entre alternativas com trade-offs
-- Precisar documentar o "por que" de uma escolha
+WHEN TO USE
+Use this type to record important architectural decisions.
+Create an ADR when:
+- Making a significant technical decision
+- Choosing between alternatives with trade-offs
+- Needing to document the "why" behind a choice
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Usar Stripe para pagamentos")
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "Use Stripe for payments")
 - status: proposed | accepted | deprecated | superseded
-- deciders: Lista de pessoas que participaram da decisao
-- date: Data da decisao
+- deciders: List of people who participated in the decision
+- date: Date of the decision
 
-RELACIONAMENTOS
-- Nasce de: Discussoes em meetings ou necessidades de specs
-- Referencia: specs e contexts afetados
-- Pode ser superseded por: outro ADR mais recente
+RELATIONSHIPS
+- Born from: Discussions in meetings or needs from specs
+- References: affected specs and contexts
+- Can be superseded by: another more recent ADR
 
-DICAS
-- Sempre documente pelo menos 2 alternativas consideradas
-- Inclua pros/cons de cada alternativa
-- Explique claramente por que a alternativa foi rejeitada
-- Use voz ativa: "Usaremos X porque Y"
+TIPS
+- Always document at least 2 alternatives considered
+- Include pros/cons for each alternative
+- Clearly explain why an alternative was rejected
+- Use active voice: "We will use X because Y"
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

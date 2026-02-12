@@ -7,33 +7,33 @@ problem: "{{PROBLEM_REFERENCE}}"
 
 <!--
 ================================================================================
-GUIA: Hipotese de Solucao (Hypothesis)
+GUIDE: Solution Hypothesis (Hypothesis)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar hipoteses a serem validadas.
-Crie uma hypothesis quando:
-- Tiver uma ideia de solucao para um problema validado
-- Precisar testar uma suposicao antes de investir em desenvolvimento
-- Quiser estruturar um experimento de validacao
+WHEN TO USE
+Use this type to document hypotheses to be validated.
+Create a hypothesis when:
+- You have a solution idea for a validated problem
+- You need to test an assumption before investing in development
+- You want to structure a validation experiment
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "One-click checkout reduz abandono")
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "One-click checkout reduces abandonment")
 - status: draft | testing | validated | invalidated
-- problem: Referencia ao problema que esta hipotese tenta resolver
+- problem: Reference to the problem this hypothesis tries to solve
 
-RELACIONAMENTOS
-- Nasce de: problem (problema que esta resolvendo)
-- Valida atraves de: experimentos, testes A/B, prototipagem
-- Se validada, gera: spec (especificacao da solucao)
+RELATIONSHIPS
+- Born from: problem (the problem being solved)
+- Validates through: experiments, A/B tests, prototyping
+- If validated, generates: spec (solution specification)
 
-DICAS
-- Use o formato "We believe... For... Will achieve... We know when..."
-- Liste assumptions criticas que devem ser verdadeiras
-- Defina metricas claras de sucesso/fracasso
-- Planeje experimentos com timeline definido
+TIPS
+- Use the format "We believe... For... Will achieve... We know when..."
+- List critical assumptions that must be true
+- Define clear success/failure metrics
+- Plan experiments with defined timeline
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 
@@ -70,7 +70,7 @@ Apague este bloco de comentario ao usar o template.
 
 ## Results
 
-{Resultados apos validacao - preencher depois}
+{Results after validation - fill in later}
 
 ## Decision
 

@@ -6,32 +6,32 @@ responsibility: "{{RESPONSIBILITY}}"
 
 <!--
 ================================================================================
-GUIA: Bounded Context (Context)
+GUIDE: Bounded Context (Context)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para definir bounded contexts (DDD).
-Crie um context quando:
-- Identificar um subdominio distinto no sistema
-- Precisar definir fronteiras claras de responsabilidade
-- Quiser estabelecer a linguagem ubiqua do dominio
+WHEN TO USE
+Use this type to define bounded contexts (DDD).
+Create a context when:
+- Identifying a distinct subdomain in the system
+- Needing to define clear boundaries of responsibility
+- Wanting to establish the ubiquitous language of the domain
 
-CAMPOS OBRIGATORIOS
-- title: Nome do bounded context (ex: "Identity & Authentication")
-- responsibility: Resumo da responsabilidade principal
+REQUIRED FIELDS
+- title: Bounded context name (e.g., "Identity & Authentication")
+- responsibility: Summary of the main responsibility
 
-RELACIONAMENTOS
-- Contem: specs (funcionalidades do contexto)
-- Referencia: ADRs sobre decisoes do contexto
-- Relaciona-se com: outros contexts (upstream/downstream)
+RELATIONSHIPS
+- Contains: specs (context features)
+- References: ADRs about context decisions
+- Relates to: other contexts (upstream/downstream)
 
-DICAS
-- Defina claramente o que o contexto FAZ e NAO FAZ
-- Crie um glossario com a linguagem do dominio
-- Minimize dependencias entre contexts
-- Use Anti-Corruption Layers para integracao externa
+TIPS
+- Clearly define what the context DOES and DOES NOT do
+- Create a glossary with domain language
+- Minimize dependencies between contexts
+- Use Anti-Corruption Layers for external integration
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 

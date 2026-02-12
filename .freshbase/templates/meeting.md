@@ -9,36 +9,36 @@ source: manual
 
 <!--
 ================================================================================
-GUIA: Notas de Reuniao (Meeting)
+GUIDE: Meeting Notes (Meeting)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar reunioes e suas decisoes.
-Crie um meeting quando:
-- Tiver uma reuniao importante (discovery, refinement, review)
-- Receber uma transcricao de Fireflies/Otter
-- Precisar registrar decisoes e action items
+WHEN TO USE
+Use this type to document meetings and their decisions.
+Create a meeting when:
+- You have an important meeting (discovery, refinement, review)
+- You receive a transcription from Fireflies/Otter
+- You need to record decisions and action items
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Sprint 32 Planning")
-- date: Data da reuniao (YYYY-MM-DD)
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "Sprint 32 Planning")
+- date: Meeting date (YYYY-MM-DD)
 
-CAMPOS OPCIONAIS
-- participants: Lista de participantes
-- duration: Duracao em minutos
+OPTIONAL FIELDS
+- participants: List of participants
+- duration: Duration in minutes
 - source: fireflies | manual | otter | zoom
 
-RELACIONAMENTOS
-- Gera: problems, hypotheses, specs, ADRs (extraidos da reuniao)
-- Referencia: specs e contexts discutidos
+RELATIONSHIPS
+- Generates: problems, hypotheses, specs, ADRs (extracted from meeting)
+- References: discussed specs and contexts
 
-DICAS
-- Extraia action items com owners e deadlines
-- Identifique problemas e hipoteses mencionados
-- Use o collapsible para transcricao completa
-- Mantenha o summary conciso (2-3 frases)
+TIPS
+- Extract action items with owners and deadlines
+- Identify mentioned problems and hypotheses
+- Use collapsible for full transcription
+- Keep the summary concise (2-3 sentences)
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 
@@ -46,7 +46,7 @@ Apague este bloco de comentario ao usar o template.
 
 ## Summary
 
-{2-3 frases resumindo o objetivo e resultado da reuniao}
+{2-3 sentences summarizing the meeting objective and outcome}
 
 ## Key Decisions
 
@@ -78,6 +78,6 @@ Apague este bloco de comentario ao usar o template.
 <details>
 <summary>Expand transcript</summary>
 
-{transcricao completa ou notas detalhadas}
+{full transcription or detailed notes}
 
 </details>

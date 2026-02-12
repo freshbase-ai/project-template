@@ -8,35 +8,35 @@ source: meeting
 
 <!--
 ================================================================================
-GUIA: Problema de Negocio (Problem)
+GUIDE: Business Problem (Problem)
 ================================================================================
 
-QUANDO USAR
-Use este tipo para documentar problemas de negocio identificados.
-Crie um problem quando:
-- Identificar uma dor do usuario ou gap no produto
-- Receber feedback consistente de stakeholders/usuarios
-- Detectar metricas negativas ou tendencias preocupantes
+WHEN TO USE
+Use this type to document identified business problems.
+Create a problem when:
+- Identifying a user pain point or product gap
+- Receiving consistent feedback from stakeholders/users
+- Detecting negative metrics or concerning trends
 
-CAMPOS OBRIGATORIOS
-- title: Nome descritivo (ex: "Usuarios abandonam checkout")
+REQUIRED FIELDS
+- title: Descriptive name (e.g., "Users abandon checkout")
 - status: draft | validated | invalidated
 
-CAMPOS OPCIONAIS
-- owner: Stakeholder responsavel
+OPTIONAL FIELDS
+- owner: Responsible stakeholder
 - source: meeting | interview | analytics | support-ticket
 
-RELACIONAMENTOS
-- Nasce de: meetings, entrevistas, analise de dados
-- Gera: hypotheses (para validar solucoes)
-- Eventualmente leva a: specs (se hipotese validada)
+RELATIONSHIPS
+- Born from: meetings, interviews, data analysis
+- Generates: hypotheses (to validate solutions)
+- Eventually leads to: specs (if hypothesis validated)
 
-DICAS
-- Descreva o problema do ponto de vista do usuario
-- Inclua evidencias qualitativas E quantitativas
-- Nao proponha solucoes aqui - isso e para hypotheses
+TIPS
+- Describe the problem from the user's point of view
+- Include qualitative AND quantitative evidence
+- Don't propose solutions here - that's for hypotheses
 
-Apague este bloco de comentario ao usar o template.
+Delete this comment block when using the template.
 ================================================================================
 -->
 
@@ -46,31 +46,31 @@ Apague este bloco de comentario ao usar o template.
 
 ### Who is affected?
 
-{Persona ou grupo de usuarios afetados}
+{Persona or group of affected users}
 
 ### What is the problem?
 
-{Descricao clara do problema observado}
+{Clear description of the observed problem}
 
 ### Where/When does it occur?
 
-{Contexto em que o problema se manifesta}
+{Context in which the problem manifests}
 
 ### Why does it matter?
 
-{Impacto no negocio/usuario}
+{Business/user impact}
 
 ## Evidence
 
 ### Qualitative
 
-- {Citacao de reuniao/entrevista}
-- {Feedback de usuario}
+- {Quote from meeting/interview}
+- {User feedback}
 
 ### Quantitative
 
-- {Metrica atual}: {valor}
-- {Metrica de suporte}: {valor}
+- {Current metric}: {value}
+- {Support metric}: {value}
 
 ## Context & Relationships
 
@@ -80,4 +80,4 @@ Apague este bloco de comentario ao usar o template.
 
 ## Notes
 
-{Observacoes adicionais}
+{Additional observations}
